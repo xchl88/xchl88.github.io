@@ -151,6 +151,9 @@ figure.chart{margin:0;padding:18px 18px 14px;border:1px solid var(--rule);border
 .axis span.first{transform:none}
 .axis span.last{transform:translateX(-100%)}
 figure.chart figcaption{font-size:.78rem;color:var(--ink-3);line-height:1.45}
+.atpricing{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:10px 12px;background:var(--rule-2);border-left:2px solid var(--ink-3);border-radius:2px}
+.atpricing .label{color:var(--ink-2)}
+.atpricing .ap-vals{font-family:var(--f-mono);font-size:.86rem;font-variant-numeric:tabular-nums;color:var(--ink)}
 
 .drivers h3,.why h3,.prov h3{font-family:var(--f-mono);font-stretch:normal;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
 .drivers ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
@@ -262,7 +265,8 @@ footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
           <div class="brow"><div class="blabel">Plus €670m HoldCo PIK and €293m earn-out liabilities: net debt €3,804m</div><div class="track"><span class="fill" style="--w:90.125%"></span></div><div class="bval">7.21x</div></div>
           <div class="brow" aria-hidden="true"><div class="axis"><span class="first" style="--x:0%">0x</span><span style="--x:25%">2x</span><span style="--x:50%">4x</span><span style="--x:75%">6x</span><span class="last" style="--x:100%">8x</span></div><div></div></div>
         </div>
-        <figcaption>Source: TeamSystem H1 2026 report, published after pricing and used as a proxy for offering-memorandum data; author's adjustments. The Q1 2026 figures available at pricing give the same picture: 4.67x marketed, 7.59x adjusted.</figcaption>
+        <div class="atpricing"><span class="label">At pricing · Q1 2026 report, 1 May 2026</span><span class="ap-vals">4.67x marketed · 5.67x statutory · 7.59x adjusted</span></div>
+        <figcaption>Bars: TeamSystem H1 2026 report, published after pricing and used as a proxy for offering-memorandum data; author's adjustments. The Q1 line uses LTM March 2026 figures, public before the 23 June pricing, and leads to the same conclusion.</figcaption>
       </figure>
 
       <div class="drivers">
