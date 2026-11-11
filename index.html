@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liang-Yu Lai Casebook</title>
+<meta name="description" content="Investment casebook of Liang-Yu Lai: TeamSystem leveraged credit, a Beatrice offshore wind stake priced against NAV, and research on portfolio dependence. Independent public-information and academic work.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Liang-Yu Lai">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Liang-Yu Lai Casebook">
+<meta property="og:description" content="Investment casebook of Liang-Yu Lai: TeamSystem leveraged credit, a Beatrice offshore wind stake priced against NAV, and research on portfolio dependence. Independent public-information and academic work.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230D5C66'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='15' fill='white'%3ELL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,500;87.5,600;87.5,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a committee-paper casebook. Masthead with contact, a read-first notice, a question-to-case index,
+   then each case as its own paper (meta rail left, evidence right), method and disclosure last. */
+:root{
+  --paper:#F2F5F6; --sheet:#FFFFFF; --ink:#12202A; --ink-2:#4A5963; --ink-3:#6D7C86;
+  --rule:#D4DCE0; --rule-2:#E6EBED;
+  --accent:#0D5C66; --accent-soft:#E0EDEE;
+  --go:#2C6838; --go-soft:#E2EFE4; --hold:#8F500C; --hold-soft:#F5EADB;
+  --bar-muted:#A6B4BB;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1317; --sheet:#121C21; --ink:#E3EAED; --ink-2:#A3B1B9; --ink-3:#7F8E97;
+    --rule:#283840; --rule-2:#1C292F;
+    --accent:#63B7C0; --accent-soft:#15313A;
+    --go:#88C996; --go-soft:#183022; --hold:#E3A65A; --hold-soft:#372815;
+    --bar-muted:#51636C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1317; --sheet:#121C21; --ink:#E3EAED; --ink-2:#A3B1B9; --ink-3:#7F8E97;
+  --rule:#283840; --rule-2:#1C292F;
+  --accent:#63B7C0; --accent-soft:#15313A;
+  --go:#88C996; --go-soft:#183022; --hold:#E3A65A; --hold-soft:#372815;
+  --bar-muted:#51636C;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+p{margin:0}
+h1,h2,h3{font-family:var(--f-display);font-stretch:87.5%;text-wrap:balance;margin:0;letter-spacing:-0.005em}
+.label{font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Masthead */
+.masthead{padding-block:clamp(36px,6vw,64px) 28px}
+.mast-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media (min-width:860px){.mast-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:end}}
+.masthead h1{font-size:clamp(2.5rem,6vw,3.9rem);font-weight:700;line-height:1;margin-top:14px}
+.lede{font-size:1.12rem;color:var(--ink-2);max-width:40rem;margin-top:16px}
+.contact{display:grid;gap:0;border-top:2px solid var(--ink)}
+.contact > div{display:grid;grid-template-columns:6.2rem minmax(0,1fr);gap:12px;padding-block:9px;border-bottom:1px solid var(--rule);align-items:baseline}
+.contact dt{margin:0}
+.contact dd{margin:0;min-width:0;overflow-wrap:anywhere;font-size:.95rem}
+.email-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+#email-text{user-select:all}
+.copy{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:3px;padding:2px 8px;cursor:pointer}
+.copy:hover{background:var(--accent-soft)}
+
+nav.index-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-block:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+nav.index-links a{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-2)}
+nav.index-links a:hover{color:var(--accent)}
+
+/* Notice */
+.notice{margin-top:28px;background:var(--accent-soft);border:1px solid var(--accent);border-radius:3px;padding:18px 22px;display:grid;gap:6px}
+.notice .label{color:var(--accent)}
+.notice p{max-width:70ch}
+
+/* Section shells */
+section.block{padding-block:44px 8px}
+.block-head{display:grid;gap:8px;margin-bottom:20px}
+.block-head h2{font-size:clamp(1.5rem,3vw,1.95rem);font-weight:600}
+.block-head p{color:var(--ink-2);max-width:62ch}
+
+/* Question index */
+.qrows{border-top:2px solid var(--ink)}
+.qrow{display:grid;grid-template-columns:minmax(0,1fr);gap:4px 24px;padding-block:14px;border-bottom:1px solid var(--rule)}
+@media (min-width:760px){.qrow{grid-template-columns:7.5rem minmax(0,1fr) minmax(0,16rem);align-items:baseline}}
+.qrow .q{font-size:1.02rem}
+.qrow .to{font-size:.95rem}
+.qrow .to a{text-decoration:none;font-weight:500}
+.qrow .to a:hover{text-decoration:underline}
+
+/* Case papers */
+.case{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:clamp(20px,3.4vw,40px);margin-top:28px;scroll-margin-top:16px}
+.case-top{display:grid;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--rule);margin-bottom:26px}
+.case-top h2{font-size:clamp(1.55rem,3.4vw,2.2rem);font-weight:700;line-height:1.1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:3px;padding:2px 8px;white-space:nowrap}
+.chip.pub{color:var(--accent);border-color:var(--accent)}
+.case-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:30px}
+@media (min-width:900px){.case-grid{grid-template-columns:minmax(0,17.5rem) minmax(0,1fr);gap:48px}}
+.rail{display:grid;gap:22px;align-content:start}
+.rail dl{margin:0;display:grid;gap:22px}
+.rail dt{margin-bottom:6px}
+.rail dd{margin:0;font-size:.95rem;color:var(--ink-2)}
+.rail dd.question{font-family:var(--f-display);font-stretch:87.5%;font-size:1.25rem;font-weight:600;line-height:1.25;color:var(--ink)}
+.verdict{display:inline-block;font-family:var(--f-display);font-stretch:87.5%;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px 3px;border:1.5px solid currentColor;border-radius:2px;margin-bottom:8px}
+.verdict.go{color:var(--go);background:var(--go-soft)}
+.verdict.hold{color:var(--hold);background:var(--hold-soft)}
+.verdict.find{color:var(--accent);background:var(--accent-soft)}
+.call-text{color:var(--ink)}
+.evidence{display:grid;gap:30px;min-width:0}
+
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px;margin:0}
+.fig{border-top:1px solid var(--rule);padding-top:10px;min-width:0}
+.fig dt{font-family:var(--f-mono);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.15;font-variant-numeric:tabular-nums;color:var(--ink);overflow-wrap:anywhere}
+.fig dd{margin:6px 0 0;font-size:.86rem;color:var(--ink-2);line-height:1.4}
+
+/* Charts (CSS, drawn to one scale per chart) */
+figure.chart{margin:0;padding:18px 18px 14px;border:1px solid var(--rule);border-radius:3px;display:grid;gap:14px;min-width:0}
+.chart-title{font-weight:600;font-size:.95rem}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:1px;margin-right:6px;vertical-align:-1px}
+.rows{display:grid;gap:14px}
+.brow{display:grid;grid-template-columns:minmax(0,1fr) 4.4rem;column-gap:12px;row-gap:5px;align-items:center}
+.brow.pair{grid-template-columns:3.4rem minmax(0,1fr) 3.4rem}
+.blabel{grid-column:1/-1;font-size:.86rem;color:var(--ink-2);line-height:1.35}
+.btag{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.bval{font-family:var(--f-mono);font-size:.86rem;font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.track{position:relative;height:12px;background:var(--rule-2);border-radius:1px}
+.track .fill{position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--accent);border-radius:1px}
+.track .fill.muted{background:var(--bar-muted)}
+.track.line{background:transparent}
+.track.line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--rule)}
+.track.ref::after{content:"";position:absolute;left:var(--ref);top:-5px;bottom:-5px;border-left:1.5px dashed var(--hold)}
+.dot{position:absolute;left:var(--x);top:50%;width:12px;height:12px;border-radius:50%;transform:translate(-50%,-50%);background:var(--accent);z-index:1}
+.dot.price{background:var(--hold)}
+.dot.ring{background:var(--sheet);border:2px solid var(--accent)}
+.band{position:absolute;left:var(--x);width:var(--w);top:1px;bottom:1px;background:var(--accent-soft);border:1px solid var(--accent);border-radius:1px}
+.axis{position:relative;height:1.1rem;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.axis span{position:absolute;left:var(--x);transform:translateX(-50%);white-space:nowrap}
+.axis span.first{transform:none}
+.axis span.last{transform:translateX(-100%)}
+figure.chart figcaption{font-size:.78rem;color:var(--ink-3);line-height:1.45}
+
+.drivers h3,.why h3,.prov h3{font-family:var(--f-mono);font-stretch:normal;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.drivers ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.drivers li{position:relative;padding-left:20px;max-width:66ch}
+.drivers li::before{content:"";position:absolute;left:2px;top:.68em;width:8px;height:1.5px;background:var(--accent)}
+.why{border-left:2px solid var(--accent);padding:2px 0 2px 16px}
+.why p{max-width:64ch}
+.prov{display:grid;gap:14px;padding-top:18px;border-top:1px solid var(--rule)}
+@media (min-width:700px){.prov{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+.prov p{font-size:.86rem;color:var(--ink-2)}
+
+/* Origination brief */
+.brief{margin-top:28px;border:1px solid var(--rule);border-radius:4px;padding:22px clamp(20px,3.4vw,40px);display:grid;gap:10px;background:var(--sheet)}
+.brief h2{font-size:1.3rem;font-weight:600}
+.brief p{max-width:70ch;color:var(--ink-2)}
+
+/* Method + disclosure */
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:0 40px;border-top:2px solid var(--ink)}
+@media (min-width:760px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.item{padding-block:14px;border-bottom:1px solid var(--rule)}
+.item b{font-weight:600}
+.item p{color:var(--ink-2);font-size:.95rem}
+.item p b{color:var(--ink)}
+
+footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
+.foot{display:grid;gap:16px}
+@media (min-width:760px){.foot{grid-template-columns:minmax(0,1fr) auto;align-items:end}}
+.foot p{color:var(--ink-2);font-size:.92rem;max-width:58ch}
+.foot .links{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:.95rem}
+
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="mast-grid">
+    <div>
+      <div class="label">Investment casebook · Prepared for 17Capital · November 2026</div>
+      <h1>Liang-Yu Lai</h1>
+      <p class="lede">Three cases that show how I underwrite: a sponsor-backed credit, a stake priced against NAV, and research on how portfolio dependence is measured. Each sets out the question, the call and the numbers behind it.</p>
+    </div>
+    <dl class="contact">
+      <div><dt class="label">Email</dt><dd><span class="email-line"><a id="email-text" href="mailto:liangyu.chloestine.lai@gmail.com">liangyu.chloestine.lai@gmail.com</a><button type="button" class="copy" id="copy-email">Copy</button></span></dd></div>
+      <div><dt class="label">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/liang-yu-lai/" target="_blank" rel="noopener">linkedin.com/in/liang-yu-lai</a></dd></div>
+      <div><dt class="label">Education</dt><dd>MSc Finance with Data Science, UCL, 2025–26</dd></div>
+      <div><dt class="label">Based</dt><dd>London · Right to work in the UK</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="index-links" aria-label="Sections">
+  <a href="#teamsystem">Credit</a>
+  <a href="#beatrice">Value</a>
+  <a href="#dependence">Portfolio</a>
+  <a href="#origination">Origination</a>
+  <a href="#method">Method</a>
+  <a href="#disclosure">Disclosure</a>
+</nav>
+
+<aside class="notice" aria-label="Read this first">
+  <div class="label">Read this first</div>
+  <p>The TeamSystem and Beatrice cases are independent analyses of public information, written as shadow committee memos after the real decisions had been made. I did not work on either transaction, and no company, sponsor, fund or adviser reviewed this work. The third case is my UCL MSc dissertation, built on licensed market data.</p>
+</aside>
+
+<section class="block" aria-labelledby="q-head">
+  <div class="block-head">
+    <h2 id="q-head">What the cases test</h2>
+    <p>Lending against a private equity portfolio raises three questions. Each case works through one of them on a real asset or market.</p>
+  </div>
+  <div class="qrows">
+    <div class="qrow"><div class="label">Credit</div><div class="q">How much debt does a sponsor-backed company really carry, and what ranks ahead of the equity?</div><div class="to"><a href="#teamsystem">TeamSystem €700m senior secured notes</a></div></div>
+    <div class="qrow"><div class="label">Value</div><div class="q">Is a reported NAV a price a buyer will pay?</div><div class="to"><a href="#beatrice">Beatrice 17.5% stake at £155m</a></div></div>
+    <div class="qrow"><div class="label">Portfolio</div><div class="q">How diversified is a portfolio once dependence is measured at the horizon that matters?</div><div class="to"><a href="#dependence">Equity dependence at two horizons</a></div></div>
+    <div class="qrow"><div class="label">Origination</div><div class="q">Can a market be cut to a shortlist on stated filters, with claims checked against filings?</div><div class="to"><a href="#origination">AI finance-operations screen</a></div></div>
+  </div>
+</section>
+
+<!-- ============================ TeamSystem ============================ -->
+<article class="case" id="teamsystem" aria-labelledby="ts-title">
+  <div class="case-top">
+    <div class="label">Credit</div>
+    <h2 id="ts-title">TeamSystem €700m 6.50% Senior Secured Notes due 2032</h2>
+    <div class="chips"><span class="chip pub">Public-information case</span><span class="chip">Shadow credit memo</span><span class="chip">As of 23 June 2026</span></div>
+  </div>
+  <div class="case-grid">
+    <div class="rail">
+      <dl>
+        <div><dt class="label">Question</dt><dd class="question">Approve the notes, and at what yield?</dd></div>
+        <div><dt class="label">The call</dt><dd><span class="verdict go">Approve</span><p class="call-text">Comps put fair value at 7.00% (429bp). The notes priced at 6.50% (379bp over Bunds), about 50bp tight, which a B2/B/B software credit with 90% recurring revenue can carry.</p></dd></div>
+        <div><dt class="label">Context</dt><dd>Italy's leading accounting, tax, payroll and ERP software provider, controlled by Hellman &amp; Friedman since 2021 (69%). The 6NC2 notes redeemed the €300m 2028 notes, repaid the RCF and prefunded about €178m of earn-outs.</dd></div>
+      </dl>
+    </div>
+    <div class="evidence">
+      <dl class="figs">
+        <div class="fig"><dt>7.21x</dt><dd>Adjusted net leverage, against 4.70x as marketed</dd></div>
+        <div class="fig"><dt>7.00%</dt><dd>Comps-implied fair yield; priced at 6.50%</dd></div>
+        <div class="fig"><dt>~53%</dt><dd>Recovery on the notes in a severe-case default</dd></div>
+        <div class="fig"><dt>€834m</dt><dd>Liquidity; no debt maturity before January 2031</dd></div>
+      </dl>
+
+      <figure class="chart" aria-labelledby="ts-chart-t">
+        <div class="chart-title" id="ts-chart-t">Net leverage at 30 June 2026, pro forma for the notes</div>
+        <div class="rows">
+          <div class="brow"><div class="blabel">Company definition: net debt €2,841m on PF EBITDA of €604m</div><div class="track"><span class="fill muted" style="--w:58.75%"></span></div><div class="bval">4.70x</div></div>
+          <div class="brow"><div class="blabel">Addbacks removed: statutory EBITDA of €527m</div><div class="track"><span class="fill muted" style="--w:67.375%"></span></div><div class="bval">5.39x</div></div>
+          <div class="brow"><div class="blabel">Plus €670m HoldCo PIK and €293m earn-out liabilities: net debt €3,804m</div><div class="track"><span class="fill" style="--w:90.125%"></span></div><div class="bval">7.21x</div></div>
+          <div class="brow" aria-hidden="true"><div class="axis"><span class="first" style="--x:0%">0x</span><span style="--x:25%">2x</span><span style="--x:50%">4x</span><span style="--x:75%">6x</span><span class="last" style="--x:100%">8x</span></div><div></div></div>
+        </div>
+        <figcaption>Source: TeamSystem H1 2026 report, published after pricing and used as a proxy for offering-memorandum data; author's adjustments. The Q1 2026 figures available at pricing give the same picture: 4.67x marketed, 7.59x adjusted.</figcaption>
+      </figure>
+
+      <div class="drivers">
+        <h3>What drove the call</h3>
+        <ul>
+          <li>Addbacks make up 13–18% of marketed EBITDA, so I underwrote on statutory EBITDA of €527m, not €604m.</li>
+          <li>Cash covers interest about 2.8x but funds little debt reduction: LTM free cash flow of €122m, against €566m of M&amp;A and earn-outs.</li>
+          <li>The €650m HoldCo PIK would cost about €52m a year in cash. About €16m was paid in H1 2026, presumably upstreamed from the operating company.</li>
+          <li>Liquidity survives every case I ran, but leverage does not. In the severe case (EBITDA −43%), leverage peaks at 13.6x with interest cover of 1.6x.</li>
+          <li>After market moves, the notes priced 156bp wider than the issuer's own 2025 deal. Fundamentals and terms explain −13bp of that; the remaining +169bp is repricing of the issuer and of software credit.</li>
+        </ul>
+      </div>
+
+      <div class="why">
+        <h3>Why it matters for portfolio lending</h3>
+        <p>A fund-level lender sits above structures like this one. The marketed 4.70x left out €963m of HoldCo PIK and earn-out claims that rank ahead of the sponsor's equity, and that equity is the value a NAV loan relies on.</p>
+      </div>
+
+      <div class="prov">
+        <div><h3>Sources</h3><p>TeamSystem Q1 and H1 2026 reports; new-issue terms and pricing (CreditFlow Research); Euro HY OAS (ICE BofA via FRED); Bundesbank zero-coupon curve.</p></div>
+        <div><h3>Work product</h3><p>7-page memo with appendix. Excel model covering sources and uses, pro forma capital structure, cash flow, four operating cases, recovery and nine-issue comps.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============================ Beatrice ============================ -->
+<article class="case" id="beatrice" aria-labelledby="bea-title">
+  <div class="case-top">
+    <div class="label">Value</div>
+    <h2 id="bea-title">Beatrice Offshore Wind, 17.5% stake at £155m</h2>
+    <div class="chips"><span class="chip pub">Public-information case</span><span class="chip">Shadow IC memo</span><span class="chip">As of 15 June 2026</span></div>
+  </div>
+  <div class="case-grid">
+    <div class="rail">
+      <dl>
+        <div><dt class="label">Question</dt><dd class="question">Should co-owner Equitix match £155m under its pre-emption right?</dd></div>
+        <div><dt class="label">The call</dt><dd><span class="verdict hold">Do not match</span><p class="call-text">On public evidence the stake is worth £133.1m, so the price is 16.5% above value and returns 4.9%. Match only if four diligence gates clear: P50 of at least 2,300 GWh, life to 2054, a 15% post-subsidy cost cut and merchant prices 10% above TRIG's curve.</p></dd></div>
+        <div><dt class="label">Context</dt><dd>TRIG agreed to sell its 17.5% of Beatrice (588 MW, Outer Moray Firth) for about £155m, 4% below its 31 December 2025 carrying value. Equitix exercised its pre-emption right; the memo tests that decision.</dd></div>
+      </dl>
+    </div>
+    <div class="evidence">
+      <dl class="figs">
+        <div class="fig"><dt>£133.1m</dt><dd>APV value of the stake, Base case</dd></div>
+        <div class="fig"><dt>4.9%</dt><dd>Equity IRR at £155m (1.12x cash multiple)</dd></div>
+        <div class="fig"><dt>96%</dt><dd>Share of enterprise value earned before the CfD ends in 2033–34</dd></div>
+        <div class="fig"><dt>23–32%</dt><dd>Discount to NAV of listed wind funds, 12 June 2026</dd></div>
+      </dl>
+
+      <figure class="chart" aria-labelledby="bea-chart-t">
+        <div class="chart-title" id="bea-chart-t">Where £155m sits: value of the 17.5% stake, £m</div>
+        <div class="legend"><span><i style="background:var(--hold)"></i>Price paid (dashed line)</span><span><i style="background:var(--accent)"></i>Values</span></div>
+        <div class="rows" style="--ref:78.571%">
+          <div class="brow"><div class="blabel">At listed wind funds' implied returns (12–14%)</div><div class="track line ref"><span class="band" style="--x:5.714%;--w:22.857%"></span></div><div class="bval">104–120</div></div>
+          <div class="brow"><div class="blabel">APV value, Base case</div><div class="track line ref"><span class="dot" style="--x:47.286%"></span></div><div class="bval">133.1</div></div>
+          <div class="brow"><div class="blabel">Buyer case B: 35-year life, merchant +10%, 15% cost cut</div><div class="track line ref"><span class="dot ring" style="--x:77.857%"></span></div><div class="bval">154.5</div></div>
+          <div class="brow"><div class="blabel">Price paid</div><div class="track line ref"><span class="dot price" style="--x:78.571%"></span></div><div class="bval">155.0</div></div>
+          <div class="brow"><div class="blabel">TRIG carrying value, 31 December 2025</div><div class="track line ref"><span class="dot" style="--x:87.857%"></span></div><div class="bval">161.5</div></div>
+          <div class="brow" aria-hidden="true"><div class="axis"><span class="first" style="--x:0%">100</span><span style="--x:28.571%">120</span><span style="--x:57.143%">140</span><span style="--x:85.714%">160</span><span class="last" style="--x:100%">170</span></div><div></div></div>
+        </div>
+        <figcaption>Source: author's valuation model (APV at phase-specific rates, values at 31 March 2026); TRIG RNS, 15 June 2026; listed-fund closing prices and NAVs at 12 June 2026.</figcaption>
+      </figure>
+
+      <div class="drivers">
+        <h3>What drove the call</h3>
+        <ul>
+          <li>The value is the last eight years of the CfD at £205.70/MWh. After 2034, cash costs of about £174k/MW absorb most merchant revenue.</li>
+          <li>Output is the swing factor: each 1% of P50 is worth about £4.7m. I rebuilt P50 at 2,300 GWh from a 30-year ERA5 wind index (R² 0.90), correcting for a less windy period and a 2025 cable fault. It is flagged as an estimate, not a yield study.</li>
+          <li>I tested the public data before relying on it. LCCC's CfD payments match the audited CfD revenue within £1.4m in every year from FY2020 to FY2025 except FY2024 (£3.3m).</li>
+          <li>No single assumption reaches the price. Only the three buyer levers together get there, at £154.5m and a 9.2% IRR, with no margin of safety.</li>
+          <li>The undisclosed locked-box and ticker terms move the premium between +2.5% and +16.5%. Under every structure the price stays at or above value.</li>
+        </ul>
+      </div>
+
+      <div class="why">
+        <h3>Why it matters for portfolio lending</h3>
+        <p>Every NAV mark raises the same question: what would a buyer pay? Here private buyers paid close to NAV while listed funds holding similar cash flows traded 23–32% below it. TRIG sold Beatrice 4% below NAV while buying back its own shares at about 35% below.</p>
+      </div>
+
+      <div class="prov">
+        <div><h3>Sources</h3><p>TRIG RNS (15 June 2026), 2025 Annual Report and Q1 2026 NAV update; Beatrice SPV and holdco accounts (Companies House SC350248, SC528855); LCCC; Elexon; Open-Meteo ERA5; Bank of England; FT Markets closing prices.</p></div>
+        <div><h3>Work product</h3><p>16-page memo with appendix. APV model (FY2027–FY2056, three scenarios, five deal-timing structures) and a 15-tab data pack. All 9,706 model and 2,226 data-pack formulas, recalculated in Microsoft Excel, match an independent recalculation.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============================ Dependence research ============================ -->
+<article class="case" id="dependence" aria-labelledby="dep-title">
+  <div class="case-top">
+    <div class="label">Portfolio</div>
+    <h2 id="dep-title">Global equity dependence at two horizons</h2>
+    <div class="chips"><span class="chip">Academic research</span><span class="chip">UCL MSc dissertation</span><span class="chip">August 2026</span></div>
+  </div>
+  <div class="case-grid">
+    <div class="rail">
+      <dl>
+        <div><dt class="label">Question</dt><dd class="question">Does sampling daily or weekly change the dependence a risk model measures, and the risk a portfolio then realises?</dd></div>
+        <div><dt class="label">Finding</dt><dd><span class="verdict find">Horizon matters</span><p class="call-text">Measured dependence changes with the sampling horizon, mostly in pairs of markets that close at different times. Whether that changes realised risk depends on the portfolio's constraints.</p></dd></div>
+        <div><dt class="label">Data</dt><dd>Fourteen equity markets across the Americas, EMEA and Asia-Pacific, 2005–2025, from LSEG: 3,579 common trading days, 1,056 weeks, 91 pairs. Five questions were registered before estimation.</dd></div>
+      </dl>
+    </div>
+    <div class="evidence">
+      <dl class="figs">
+        <div class="fig"><dt>+0.17</dt><dd>Weekly minus daily correlation, cross-time-zone pairs (95% CI +0.14 to +0.20)</dd></div>
+        <div class="fig"><dt>63 of 63</dt><dd>Cross-time-zone pairs where weekly correlation is higher</dd></div>
+        <div class="fig"><dt>+0.017</dt><dd>Gap per hour of closing-time separation (t = 3.6)</dd></div>
+        <div class="fig"><dt>60.4 → 72.6</dt><dd>Total connectedness (%), daily to weekly</dd></div>
+      </dl>
+
+      <figure class="chart" aria-labelledby="dep-chart-t">
+        <div class="chart-title" id="dep-chart-t">Average pairwise return correlation, 2005–2025</div>
+        <div class="legend"><span><i style="background:var(--bar-muted)"></i>Daily</span><span><i style="background:var(--accent)"></i>Weekly</span></div>
+        <div class="rows">
+          <div class="brow pair">
+            <div class="blabel">United States and Japan (closes 15 hours apart)</div>
+            <div class="btag">Daily</div><div class="track"><span class="fill muted" style="--w:21.286%"></span></div><div class="bval">0.149</div>
+            <div class="btag">Weekly</div><div class="track"><span class="fill" style="--w:92.286%"></span></div><div class="bval">0.646</div>
+          </div>
+          <div class="brow pair">
+            <div class="blabel">Cross-time-zone pairs, average of 63</div>
+            <div class="btag">Daily</div><div class="track"><span class="fill muted" style="--w:40.900%"></span></div><div class="bval">0.286</div>
+            <div class="btag">Weekly</div><div class="track"><span class="fill" style="--w:65.129%"></span></div><div class="bval">0.456</div>
+          </div>
+          <div class="brow pair">
+            <div class="blabel">Same-time-zone pairs, average of 28</div>
+            <div class="btag">Daily</div><div class="track"><span class="fill muted" style="--w:61.486%"></span></div><div class="bval">0.430</div>
+            <div class="btag">Weekly</div><div class="track"><span class="fill" style="--w:67.614%"></span></div><div class="bval">0.473</div>
+          </div>
+          <div class="brow pair" aria-hidden="true"><div></div><div class="axis"><span class="first" style="--x:0%">0</span><span style="--x:28.571%">0.2</span><span style="--x:57.143%">0.4</span><span style="--x:85.714%">0.6</span><span class="last" style="--x:100%">0.7</span></div><div></div></div>
+        </div>
+        <figcaption>Local-currency price indices from LSEG Workspace. Daily: 3,579 common trading days. Weekly: 1,056 weeks, built from each market's last close in each ISO week.</figcaption>
+      </figure>
+
+      <div class="drivers">
+        <h3>What the tests show</h3>
+        <ul>
+          <li>Closing-time separation tracks the gap and geographic distance does not: +0.017 per hour (permutation p = 0.001), against t = 0.35 for distance once both are in the regression.</li>
+          <li>The daily risk engine understated portfolio volatility by 0.42 points more than the weekly one. That is an estimation-window effect: at matched 24-month spans the difference is −0.02 (95% CI −0.61 to +0.52).</li>
+          <li>A 10% position cap changes the comparison by +0.59 points (95% CI +0.15 to +1.13). Constraints make covariance structure matter, although the capped difference itself is not distinguishable from zero.</li>
+          <li>Removing the first common component reduces connectedness by 45–51% daily and 65–69% weekly.</li>
+        </ul>
+      </div>
+
+      <div class="why">
+        <h3>Why it matters for portfolio lending</h3>
+        <p>How diversified a portfolio looks depends on how dependence between its holdings is measured. The practical rules from this work: compare risk engines over equal calendar spans, test risk at the horizon the mandate is judged on, and expect concentration limits to make dependence matter.</p>
+      </div>
+
+      <div class="prov">
+        <div><h3>Data and code</h3><p>LSEG Workspace index data. Python pipeline with version-controlled pre-registration files and audit scripts that tie the headline figures in the text to stored output.</p></div>
+        <div><h3>Work product</h3><p>Dissertation (main report and appendix), the full unabridged manuscript and code.</p></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============================ Origination brief ============================ -->
+<section class="brief" id="origination" aria-labelledby="org-title">
+  <div class="label">Origination, in brief</div>
+  <h2 id="org-title">European AI finance-operations sourcing screen</h2>
+  <div class="chips"><span class="chip pub">Public-information case</span><span class="chip">October 2026</span></div>
+  <p>I screened 26 companies to a shortlist of five with hard filters and a weighted scorecard, then checked company claims against statutory filings. One reported $160m Series B turned out to be about 96% secondary capital. The shortlist fed a shadow investment memo with a rebuilt cap table and five exit cases.</p>
+</section>
+
+<!-- ============================ Method ============================ -->
+<section class="block" id="method" aria-labelledby="m-head">
+  <div class="block-head"><h2 id="m-head">How the work is built</h2></div>
+  <div class="cols">
+    <div class="item"><p><b>Dated.</b> Each case has an as-of date. Where a later filing stands in for data investors had at that date, the page says so: TeamSystem's pro forma figures come from the H1 2026 report as a proxy for the offering memorandum, cross-checked against the Q1 report available at pricing.</p></div>
+    <div class="item"><p><b>Two bases.</b> Company-reported figures and my adjustments sit side by side and are never merged, as in the TeamSystem leverage bridge above.</p></div>
+    <div class="item"><p><b>Sourced.</b> Every hard-coded input points to a named document. Inputs without one are flagged as assumptions, such as the TeamSystem recovery multiple and the Beatrice P50.</p></div>
+    <div class="item"><p><b>Rebuilt.</b> Models are generated from scripts and recalculated independently before any figure reaches a memo.</p></div>
+    <div class="item"><p><b>Sized to the evidence.</b> Where a test does not reject, the text says so and goes no further. The dissertation reports a constraint-dependent change, not a measured cost.</p></div>
+    <div class="item"><p><b>Decision first.</b> Each memo opens with the recommendation and the few numbers that carry it, before the detail.</p></div>
+  </div>
+</section>
+
+<!-- ============================ Disclosure ============================ -->
+<section class="block" id="disclosure" aria-labelledby="d-head">
+  <div class="block-head"><h2 id="d-head">Disclosure</h2></div>
+  <div class="cols">
+    <div class="item"><p><b>Independent work.</b> Not commissioned, reviewed or endorsed by TeamSystem, Hellman &amp; Friedman, TRIG, Equitix, any bookrunner, or 17Capital. No non-public information was used.</p></div>
+    <div class="item"><p><b>Shadow format.</b> "Approve" and "Do not match" are my analytical conclusions, written in committee-memo form. The real decisions had already been made: the TeamSystem notes priced on 23 June 2026, and Equitix exercised its pre-emption right (TRIG RNS, 15 June 2026).</p></div>
+    <div class="item"><p><b>Not advice.</b> Nothing here is investment advice or an offer of any security.</p></div>
+    <div class="item"><p><b>Fixed dates.</b> Figures are as of the dates shown and are not updated for later market moves.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <p>Full memos, models and source lists are available on request.</p>
+    <div class="links">
+      <span class="num">liangyu.chloestine.lai@gmail.com</span>
+      <a href="https://www.linkedin.com/in/liang-yu-lai/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy-email');
+  var el = document.getElementById('email-text');
+  if(!btn || !el) return;
+  var addr = 'liangyu.chloestine.lai@gmail.com';
+  function reset(){ setTimeout(function(){ btn.textContent = 'Copy'; }, 2200); }
+  function selectText(){
+    try{
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }catch(e){}
+  }
+  btn.addEventListener('click', function(){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(function(){
+        btn.textContent = 'Copied'; reset();
+      }, function(){
+        selectText(); btn.textContent = 'Selected'; reset();
+      });
+    } else {
+      selectText(); btn.textContent = 'Selected'; reset();
+    }
+  });
+})();
+</script>
+</body>
+</html>
