@@ -80,8 +80,6 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:87.5%;text-wrap:balance;margi
 .contact dd{margin:0;min-width:0;overflow-wrap:anywhere;font-size:.95rem}
 .email-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
 #email-text{user-select:all}
-.copy{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:3px;padding:2px 8px;cursor:pointer}
-.copy:hover{background:var(--accent-soft)}
 
 nav.index-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-block:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 nav.index-links a{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-2)}
@@ -209,7 +207,7 @@ footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
       <p class="lede">Four cases that show how I underwrite: a NAV facility against a portfolio of fund interests, a sponsor-backed credit, a stake priced against NAV, and research on how portfolio dependence is measured. Each sets out the question, the call and the numbers behind it.</p>
     </div>
     <dl class="contact">
-      <div><dt class="label">Email</dt><dd><span class="email-line"><a id="email-text" href="mailto:liangyu.chloestine.lai@gmail.com">liangyu.chloestine.lai@gmail.com</a><button type="button" class="copy" id="copy-email">Copy</button></span></dd></div>
+      <div><dt class="label">Email</dt><dd><span class="email-line"><a id="email-text" href="mailto:liangyu.chloestine.lai@gmail.com">liangyu.chloestine.lai@gmail.com</a></span></dd></div>
       <div><dt class="label">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/liang-yu-lai/" target="_blank" rel="noopener">linkedin.com/in/liang-yu-lai</a></dd></div>
       <div><dt class="label">Education</dt><dd>MSc Finance with Data Science, UCL, 2025–26</dd></div>
       <div><dt class="label">Based</dt><dd>London · Right to work in the UK</dd></div>
@@ -535,31 +533,5 @@ footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
 
 </div>
 
-<script>
-(function(){
-  var btn = document.getElementById('copy-email');
-  var el = document.getElementById('email-text');
-  if(!btn || !el) return;
-  var addr = 'liangyu.chloestine.lai@gmail.com';
-  function reset(){ setTimeout(function(){ btn.textContent = 'Copy'; }, 2200); }
-  function selectText(){
-    try{
-      var r = document.createRange(); r.selectNodeContents(el);
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-    }catch(e){}
-  }
-  btn.addEventListener('click', function(){
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(addr).then(function(){
-        btn.textContent = 'Copied'; reset();
-      }, function(){
-        selectText(); btn.textContent = 'Selected'; reset();
-      });
-    } else {
-      selectText(); btn.textContent = 'Selected'; reset();
-    }
-  });
-})();
-</script>
 </body>
 </html>
