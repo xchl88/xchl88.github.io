@@ -194,6 +194,47 @@ footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
 
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+/* Print / PDF: A4, light, each case on its own page, nothing split mid-block. Screen layout is unchanged. */
+.print-only{display:none}
+@media print{
+  @page{size:A4;margin:12mm 13mm}
+  :root{color-scheme:light}
+  html{font-size:10.5px}
+  body{font-size:10.5px;line-height:1.45;background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding-left:0;padding-right:0}
+  .masthead{padding-block:0 14px}
+  .mast-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:end}
+  .masthead h1{font-size:3.2rem}
+  nav.index-links{display:none}
+  .print-only{display:block}
+  .print-note{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.04em;color:var(--accent);margin-top:10px}
+  .notice{margin-top:16px}
+  section.block{padding-block:20px 0}
+  .qrow{grid-template-columns:7rem minmax(0,1fr) minmax(0,13rem);align-items:baseline}
+  .case{break-before:page;margin-top:0;border:0;border-radius:0;padding:0;background:transparent}
+  .case-top{padding-bottom:14px;margin-bottom:18px}
+  .case-grid{grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:26px}
+  .evidence,.rail dl,.drivers ul{display:block}
+  .evidence>*+*{margin-top:14px}
+  .evidence>figure.chart{margin-top:16px}
+  .rail dl>div+div{margin-top:12px}
+  .drivers li+li{margin-top:5px}
+  .figs{gap:8px 18px}
+  .fig dt{font-size:1.35rem}
+  .case-top h2{font-size:1.9rem}
+  figure.chart{padding:11px 14px 9px;gap:8px}
+  .rows{gap:8px}
+  .track{height:9px}
+  .why{padding-left:12px}
+  .prov{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot{grid-template-columns:minmax(0,1fr) auto;align-items:end}
+  #method{break-before:page}
+  footer{margin-top:24px;padding-block:16px 0}
+  figure.chart,.figs,.fig,.drivers li,.why,.prov>div,.qrow,.item,.rail dl>div,.notice,footer{break-inside:avoid}
+  h2,h3,.case-top,.block-head{break-after:avoid}
+}
 </style>
 </head>
 <body>
@@ -205,6 +246,7 @@ footer{margin-top:56px;padding-block:28px 48px;border-top:2px solid var(--ink)}
       <div class="label">Investment casebook · November 2026</div>
       <h1>Liang-Yu Lai</h1>
       <p class="lede">Four cases that show how I underwrite: a NAV facility against a portfolio of fund interests, a sponsor-backed credit, a stake priced against NAV, and research on how portfolio dependence is measured. Each sets out the question, the call and the numbers behind it.</p>
+      <p class="print-only print-note">Live version, with a one-page summary for each case: xchl88.github.io</p>
     </div>
     <dl class="contact">
       <div><dt class="label">Email</dt><dd><span class="email-line"><a id="email-text" href="mailto:liangyu.chloestine.lai@gmail.com">liangyu.chloestine.lai@gmail.com</a></span></dd></div>
